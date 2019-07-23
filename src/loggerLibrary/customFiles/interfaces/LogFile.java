@@ -23,7 +23,6 @@ public class LogFile implements File {
     @Override
     public void write() {
         try {
-            this.setFileWriter(System.getProperty("user.dir") + "\\Output.txt");
             String text = buffer.toString();
             this.fileWriter.append(text);
             this.fileWriter.close();
