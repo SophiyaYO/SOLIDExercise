@@ -13,6 +13,11 @@ public class ConsoleAppender implements Appender {
         this.reportLevel = ReportLevel.INFO;
     }
 
+    public ConsoleAppender(Layout layout, ReportLevel reportLevel) {
+        this(layout);
+        this.reportLevel = reportLevel;
+    }
+
     @Override
     public void append(String date, String reportLevel, String message) {
         System.out.println(this.layout.format(date, reportLevel, message));
