@@ -24,6 +24,11 @@ public class ConsoleAppender implements Appender {
     }
 
     @Override
+    public void append(String date, ReportLevel reportLevel, String message) {
+
+    }
+
+    @Override
     public void setReportLevel(ReportLevel reportLevel) {
         this.reportLevel = reportLevel;
     }
