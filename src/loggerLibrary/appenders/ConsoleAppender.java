@@ -1,13 +1,16 @@
 package loggerLibrary.appenders;
 
 import loggerLibrary.appenders.interfaces.Appender;
+import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 
 public class ConsoleAppender implements Appender {
     private Layout layout;
+    private ReportLevel reportLevel;
 
     public ConsoleAppender(Layout layout) {
         this.layout = layout;
+        this.reportLevel = ReportLevel.INFO;
     }
 
     @Override
