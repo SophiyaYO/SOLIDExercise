@@ -23,8 +23,9 @@ public class Main {
 
         Logger logger = new MessageLogger(consoleAppender, fileAppender);
 
-        logger.logError("3/26/2015 2:08:11 PM", "Error parsing JSON.");
-        logger.logInfo("3/26/2015 2:08:11 PM", "User Pesho successfully registered.");
+        logger.logError("3/31/2015 5:33:07 PM", "Error parsing request");
+//        logger.logInfo("3/26/2015 2:08:11 PM", "User Pesho successfully registered.");
 
+        System.out.println(file.getSize());
     }
 }

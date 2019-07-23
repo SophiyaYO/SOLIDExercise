@@ -17,7 +17,7 @@ public class LogFile implements File {
     }
 
     public void appendBuffer(String text) {
-        this.buffer.append(text);
+        this.buffer.append(text).append("\r\n");
     }
 
     @Override
@@ -25,9 +25,8 @@ public class LogFile implements File {
         try {
             this.setFileWriter(System.getProperty("user.dir") + "\\Output.txt");
             String text = buffer.toString();
-            this.fileWriter.append(text).append("\r\n");
+            this.fileWriter.append(text);
             this.fileWriter.close();
-//            this.buffer = new StringBuilder();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
@@ -39,7 +38,9 @@ public class LogFile implements File {
 
         for (Character chary : this.buffer.toString().toCharArray()) {
             if (Character.isAlphabetic(chary)) {
+
                 size += chary;
+
             }
         }
 
