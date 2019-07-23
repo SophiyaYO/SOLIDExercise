@@ -81,7 +81,7 @@ public class Main {
             line = scanner.nextLine();
         }
 
-
+        System.out.println(logger.toString());
 
     }
 }

@@ -1,8 +1,11 @@
 package loggerLibrary.appenders;
 
 import loggerLibrary.customFiles.interfaces.File;
+import loggerLibrary.customFiles.interfaces.LogFile;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
+
+import java.io.IOException;
 
 public class FileAppender extends AppenderImpl {
     private File file;
@@ -22,7 +25,14 @@ public class FileAppender extends AppenderImpl {
     @Override
     public void append(String date, ReportLevel reportLevel, String message) {
         if (this.file == null) {
-            throw new NullPointerException("File reference not set to an instance of an object");
+//            throw new NullPointerException("File reference not set to an instance of an object");
+
+            try {
+                this.setFile(new LogFile());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
 
         this.file.appendBuffer(this.format(date, reportLevel, message));
