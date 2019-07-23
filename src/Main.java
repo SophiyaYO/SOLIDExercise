@@ -9,5 +9,7 @@ public class Main {
         Layout layout = new simpleLayout();
 
         Appender consoleAppender = new ConsoleAppender(layout);
+
+        consoleAppender.append("Date", Enum.valueOf());
     }
 }
