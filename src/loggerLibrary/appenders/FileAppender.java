@@ -14,11 +14,9 @@ public class FileAppender extends AppenderImpl {
 
     @Override
     public void append(String date, ReportLevel reportLevel, String message) {
+        String str = this.format(date, reportLevel, message);
+
 
     }
 
-    @Override
-    public void setReportLevel(ReportLevel reportLevel) {
-
-    }
 }
