@@ -19,13 +19,8 @@ public class ConsoleAppender implements Appender {
     }
 
     @Override
-    public void append(String date, String reportLevel, String message) {
-        System.out.println(this.layout.format(date, reportLevel, message));
-    }
-
-    @Override
     public void append(String date, ReportLevel reportLevel, String message) {
-
+        System.out.println(this.layout.format(date, reportLevel, message));
     }
 
     @Override
