@@ -23,10 +23,11 @@ public class LogFile implements File {
     @Override
     public void write() {
         try {
+            this.setFileWriter(System.getProperty("user.dir") + "\\Output.txt");
             String text = buffer.toString();
-            this.fileWriter.append(text);
+            this.fileWriter.append(text).append("\r\n");
             this.fileWriter.close();
-            this.buffer = new StringBuilder();
+//            this.buffer = new StringBuilder();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
