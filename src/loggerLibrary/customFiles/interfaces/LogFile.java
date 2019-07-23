@@ -9,7 +9,7 @@ public class LogFile implements File {
 
     public LogFile() throws IOException {
         this.buffer = new StringBuilder();
-        this.setFileWriter(System.getProperty("user.dir"));
+        this.setFileWriter(System.getProperty("user.dir") + "\\Output.txt");
     }
 
     public void setFileWriter(String path) throws IOException {
