@@ -10,16 +10,21 @@ public class ConsoleAppender implements Appender {
 
     public ConsoleAppender(Layout layout) {
         this.layout = layout;
-        this.reportLevel = ReportLevel.INFO;
+        this.setReportLevel(ReportLevel.INFO);
     }
 
     public ConsoleAppender(Layout layout, ReportLevel reportLevel) {
         this(layout);
-        this.reportLevel = reportLevel;
+        this.setReportLevel(reportLevel);
     }
 
     @Override
     public void append(String date, String reportLevel, String message) {
         System.out.println(this.layout.format(date, reportLevel, message));
+    }
+
+    @Override
+    public void setReportLevel(ReportLevel reportLevel) {
+        this.reportLevel = reportLevel;
     }
 }
