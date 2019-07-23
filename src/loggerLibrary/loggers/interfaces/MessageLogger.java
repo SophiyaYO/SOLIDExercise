@@ -42,7 +42,9 @@ public class MessageLogger implements Logger {
 
     private void logMessage(String date, ReportLevel reportLevel, String message) {
         for (Appender appender : this.appenders) {
-            appender.append(date, reportLevel ,message);
+            if (appender.getReportLevel().compareTo(reportLevel) >= 0) {
+                appender.append(date, reportLevel, message);
+            }
         }
     }
 }

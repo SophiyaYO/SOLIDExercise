@@ -18,6 +18,11 @@ public abstract class AppenderImpl implements Appender {
         this.setReportLevel(reportLevel);
     }
 
+    @Override
+    public ReportLevel getReportLevel() {
+        return this.reportLevel;
+    }
+
     protected String format(String date, ReportLevel reportLevel, String message) {
       return this.layout.format(date, reportLevel, message);
     }
