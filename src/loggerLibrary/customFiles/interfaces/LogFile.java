@@ -16,6 +16,10 @@ public class LogFile implements File {
         this.fileWriter = new FileWriter(System.getProperty(path));
     }
 
+    public void appendBuffer(String text) {
+        this.buffer.append(text);
+    }
+
     @Override
     public void write() {
         try {
