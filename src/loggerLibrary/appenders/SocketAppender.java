@@ -15,7 +15,7 @@ public class SocketAppender extends AppenderImpl {
     private PrintWriter out;
     private BufferedReader in;
 
-    protected SocketAppender(Layout layout) throws IOException {
+    public SocketAppender(Layout layout) throws IOException {
         super(layout);
         InetAddress address = InetAddress.getLocalHost();
         this.startConnection("127.0.0.1", 21);

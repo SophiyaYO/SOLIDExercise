@@ -3,6 +3,8 @@ package loggerLibrary.appenders;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 
+import java.io.IOException;
+
 public class ConsoleAppender extends AppenderImpl {
 
     public ConsoleAppender(Layout layout) {
@@ -11,6 +13,11 @@ public class ConsoleAppender extends AppenderImpl {
 
     public ConsoleAppender(Layout layout, ReportLevel reportLevel) {
         super(layout, reportLevel);
+    }
+
+    @Override
+    protected void startConnection(String ip, int iport) throws IOException {
+
     }
 
     @Override

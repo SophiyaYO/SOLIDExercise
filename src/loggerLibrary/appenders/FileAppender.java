@@ -43,4 +43,9 @@ public class FileAppender extends AppenderImpl {
     public String toString() {
         return super.toString() + ", File size: " + this.file.getSize();
     }
+
+    @Override
+    protected void startConnection(String ip, int iport) throws IOException {
+
+    }
 }

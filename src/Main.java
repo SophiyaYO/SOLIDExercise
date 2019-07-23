@@ -1,5 +1,6 @@
 import loggerLibrary.appenders.ConsoleAppender;
 import loggerLibrary.appenders.FileAppender;
+import loggerLibrary.appenders.SocketAppender;
 import loggerLibrary.appenders.interfaces.Appender;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.SimpleLayout;
@@ -8,11 +9,19 @@ import loggerLibrary.layouts.interfaces.Layout;
 import loggerLibrary.loggers.interfaces.Logger;
 import loggerLibrary.loggers.interfaces.MessageLogger;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
+
+//        Layout layout = new XmlLayout();
+//        Appender appender = new SocketAppender(layout);
+//        Logger logger = new MessageLogger(appender);
+//
+//        logger.logInfo("5/13/2019", "Hello from Socket!");
+
 
         int n = Integer.parseInt(scanner.nextLine());
 
