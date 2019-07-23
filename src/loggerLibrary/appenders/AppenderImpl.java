@@ -4,6 +4,8 @@ import loggerLibrary.appenders.interfaces.Appender;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 
+import java.io.IOException;
+
 public abstract class AppenderImpl implements Appender {
     private Layout layout;
     private ReportLevel reportLevel;
@@ -46,4 +48,6 @@ public abstract class AppenderImpl implements Appender {
                         this.reportLevel.toString(),
                         this.loggedMessages);
     }
+
+    protected abstract void startConnection(String ip, int iport) throws IOException;
 }
