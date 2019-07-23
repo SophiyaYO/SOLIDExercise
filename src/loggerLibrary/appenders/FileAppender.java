@@ -29,4 +29,8 @@ public class FileAppender extends AppenderImpl {
         this.file.write();
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", File size: " + this.file.getSize();
+    }
 }
