@@ -1,4 +1,4 @@
-package loggerLibrary;
+package loggerLibrary.layouts.interfaces;
 
 public interface Layout {
 

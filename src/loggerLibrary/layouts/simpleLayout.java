@@ -1,4 +1,6 @@
-package loggerLibrary;
+package loggerLibrary.layouts;
+
+import loggerLibrary.layouts.interfaces.Layout;
 
 public class simpleLayout implements Layout {
 

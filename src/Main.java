@@ -1,5 +1,5 @@
-import loggerLibrary.Layout;
-import loggerLibrary.simpleLayout;
+import loggerLibrary.layouts.interfaces.Layout;
+import loggerLibrary.layouts.simpleLayout;
 
 public class Main {
     public static void main(String[] args) {
