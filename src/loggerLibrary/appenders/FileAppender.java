@@ -1,9 +1,17 @@
 package loggerLibrary.appenders;
 
-import loggerLibrary.appenders.interfaces.Appender;
 import loggerLibrary.enumerations.ReportLevel;
+import loggerLibrary.layouts.interfaces.Layout;
 
-public class FileAppender implements Appender {
+public class FileAppender extends AppenderImpl {
+    protected FileAppender(Layout layout) {
+        super(layout);
+    }
+
+    protected FileAppender(Layout layout, ReportLevel reportLevel) {
+        super(layout, reportLevel);
+    }
+
     @Override
     public void append(String date, ReportLevel reportLevel, String message) {
 
