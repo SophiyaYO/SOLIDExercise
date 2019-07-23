@@ -1,6 +1,15 @@
 package loggerLibrary.loggers.interfaces;
 
+import loggerLibrary.appenders.interfaces.Appender;
+
 public class MessageLogger implements Logger {
+    private Appender[] appenders;
+
+    public MessageLogger(Appender... args) {
+        this.appenders = args;
+    }
+
+
     @Override
     public void logInfo(String date, String message) {
 
