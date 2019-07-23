@@ -25,6 +25,7 @@ public class LogFile implements File {
         try {
             String text = buffer.toString();
             this.fileWriter.append(text);
+            this.fileWriter.close();
             this.buffer = new StringBuilder();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
