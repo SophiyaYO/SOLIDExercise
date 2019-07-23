@@ -24,9 +24,8 @@ public class FileAppender extends AppenderImpl {
         if (this.file == null) {
             throw new NullPointerException("File reference not set to an instance of an object");
         }
-        String str = this.format(date, reportLevel, message);
 
-        this.file.
+        this.file.appendBuffer(this.format(date, reportLevel, message));
     }
 
 }
