@@ -2,5 +2,5 @@ package loggerLibrary.layouts.interfaces;
 
 public interface Layout {
 
-    String format(String data, String errorType, String message);
+    String format(String date, String reportLevel, String message);
 }
