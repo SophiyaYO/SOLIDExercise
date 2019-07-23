@@ -29,6 +29,14 @@ public class LogFile implements File {
 
     @Override
     public int getSize() {
-        return 0;
+        int size = 0;
+
+        for (Character chary : this.buffer.toString().toCharArray()) {
+            if (Character.isAlphabetic(chary)) {
+                size += chary;
+            }
+        }
+
+        return size;
     }
 }
