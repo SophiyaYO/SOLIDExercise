@@ -1,30 +1,22 @@
 package loggerLibrary.appenders;
 
-import loggerLibrary.appenders.interfaces.Appender;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 
-public class ConsoleAppender implements Appender {
-    private Layout layout;
-    private ReportLevel reportLevel;
+public class ConsoleAppender extends AppenderImpl {
 
-    public ConsoleAppender(Layout layout) {
-        this.layout = layout;
-        this.setReportLevel(ReportLevel.INFO);
+    protected ConsoleAppender(Layout layout) {
+        super(layout);
     }
 
-    public ConsoleAppender(Layout layout, ReportLevel reportLevel) {
-        this(layout);
-        this.setReportLevel(reportLevel);
+    protected ConsoleAppender(Layout layout, ReportLevel reportLevel) {
+        super(layout, reportLevel);
     }
 
     @Override
     public void append(String date, ReportLevel reportLevel, String message) {
-        System.out.println(this.layout.format(date, reportLevel, message));
+        System.out.println(this.format(date, reportLevel, message));
     }
 
-    @Override
-    public void setReportLevel(ReportLevel reportLevel) {
-        this.reportLevel = reportLevel;
-    }
+
 }
