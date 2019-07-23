@@ -13,7 +13,7 @@ public class LogFile implements File {
     }
 
     public void setFileWriter(String path) throws IOException {
-        this.fileWriter = new FileWriter(System.getProperty(path));
+        this.fileWriter = new FileWriter(path);
     }
 
     public void appendBuffer(String text) {
