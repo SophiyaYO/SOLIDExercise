@@ -1,31 +1,87 @@
 import loggerLibrary.appenders.ConsoleAppender;
 import loggerLibrary.appenders.FileAppender;
 import loggerLibrary.appenders.interfaces.Appender;
-import loggerLibrary.customFiles.interfaces.File;
-import loggerLibrary.customFiles.interfaces.LogFile;
 import loggerLibrary.enumerations.ReportLevel;
-import loggerLibrary.layouts.interfaces.Layout;
 import loggerLibrary.layouts.SimpleLayout;
+import loggerLibrary.layouts.XmlLayout;
+import loggerLibrary.layouts.interfaces.Layout;
 import loggerLibrary.loggers.interfaces.Logger;
 import loggerLibrary.loggers.interfaces.MessageLogger;
 
-import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Layout simpleLayout = new SimpleLayout();
-        Appender consoleAppender = new ConsoleAppender(simpleLayout);
+        int n = Integer.parseInt(scanner.nextLine());
 
-        File file = new LogFile();
-        Appender fileAppender = new FileAppender(simpleLayout);
-        ((FileAppender) fileAppender).setFile(file);
 
-        Logger logger = new MessageLogger(consoleAppender, fileAppender);
+        Appender[] appenders = new Appender[n];
 
-        logger.logError("3/31/2015 5:33:07 PM", "Error parsing request");
-//        logger.logInfo("3/26/2015 2:08:11 PM", "User Pesho successfully registered.");
+        int index = 0;
 
-        System.out.println(file.getSize());
+        while (n-- > 0) {
+            String[] tokens = scanner.nextLine().split("\\s+");
+
+            Appender appender = null;
+
+            Layout layout = null;
+
+            if (tokens[1].equals("SimpleLayout")) {
+                layout = new SimpleLayout();
+            } else {
+                layout = new XmlLayout();
+            }
+
+            if (tokens[0].equals("ConsoleAppender")) {
+                appender = new ConsoleAppender(layout);
+            } else {
+                appender = new FileAppender(layout);
+            }
+
+            if (tokens.length == 3) {
+                appender.setReportLevel(ReportLevel.valueOf(tokens[2]));
+            }
+
+            appenders[index++] = appender;
+
+        }
+
+        Logger logger = new MessageLogger(appenders);
+
+        String line = scanner.nextLine();
+
+        while (!line.equals("END")) {
+
+            String[] tokens = line.split("\\|");
+
+            switch (ReportLevel.valueOf(tokens[0])) {
+                case INFO:
+                    logger.logInfo(tokens[1], tokens[2]);
+                    break;
+
+                case ERROR:
+                    logger.logError(tokens[1], tokens[2]);
+                    break;
+
+                case FATAL:
+                    logger.logFatal(tokens[1], tokens[2]);
+                    break;
+
+                case WARNING:
+                    logger.logWarning(tokens[1], tokens[2]);
+                    break;
+
+                case CRITICAL:
+                    logger.logCritical(tokens[1], tokens[2]);
+                    break;
+            }
+
+            line = scanner.nextLine();
+        }
+
+
+
     }
 }

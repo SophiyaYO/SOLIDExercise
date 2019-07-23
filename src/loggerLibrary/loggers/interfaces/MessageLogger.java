@@ -47,4 +47,16 @@ public class MessageLogger implements Logger {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Logger info\r\n");
+
+        for (Appender appender : appenders) {
+            builder.append(appender.toString());
+            builder.append(System.lineSeparator());
+        }
+
+        return builder.toString().trim();
+    }
 }
