@@ -26,6 +26,7 @@ public class FileAppender extends AppenderImpl {
         }
 
         this.file.appendBuffer(this.format(date, reportLevel, message));
+        this.file.write();
     }
 
 }
