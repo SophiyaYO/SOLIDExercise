@@ -36,4 +36,14 @@ public abstract class AppenderImpl implements Appender {
     public void setReportLevel(ReportLevel reportLevel) {
         this.reportLevel = reportLevel;
     }
+
+    @Override
+    public String toString() {
+        return String.format
+                ("Appender type: %s, Layout type: %s, Report level: %s, Messages appended: %d",
+                        this.getClass().getSimpleName(),
+                        this.layout.getClass().getSimpleName(),
+                        this.reportLevel.toString(),
+                        this.loggedMessages);
+    }
 }
