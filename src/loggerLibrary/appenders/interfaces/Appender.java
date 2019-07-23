@@ -1,5 +1,5 @@
 package loggerLibrary.appenders.interfaces;
 
 public interface Appender {
-    void append();
+    void append(String date, String reportLevel, String message);
 }

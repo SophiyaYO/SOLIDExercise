@@ -1,3 +1,5 @@
+import loggerLibrary.appenders.ConsoleAppender;
+import loggerLibrary.appenders.interfaces.Appender;
 import loggerLibrary.layouts.interfaces.Layout;
 import loggerLibrary.layouts.simpleLayout;
 
@@ -6,10 +8,6 @@ public class Main {
 
         Layout layout = new simpleLayout();
 
-        System.out.println(
-                layout.format(
-                "3/31/2015 5:33:07 PM",
-                "ERROR",
-                "Error parsing request"));
+        Appender consoleAppender = new ConsoleAppender(layout);
     }
 }
