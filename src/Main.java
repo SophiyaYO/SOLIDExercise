@@ -1,5 +1,6 @@
 import loggerLibrary.appenders.ConsoleAppender;
 import loggerLibrary.appenders.interfaces.Appender;
+import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 import loggerLibrary.layouts.simpleLayout;
 
@@ -10,6 +11,6 @@ public class Main {
 
         Appender consoleAppender = new ConsoleAppender(layout);
 
-        consoleAppender.append("Date", Enum.valueOf());
+        consoleAppender.append("Date", ReportLevel.INFO, "Break is wanted");
     }
 }
