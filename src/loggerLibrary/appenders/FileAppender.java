@@ -1,14 +1,17 @@
 package loggerLibrary.appenders;
 
+import loggerLibrary.customFiles.interfaces.File;
 import loggerLibrary.enumerations.ReportLevel;
 import loggerLibrary.layouts.interfaces.Layout;
 
 public class FileAppender extends AppenderImpl {
-    protected FileAppender(Layout layout) {
+    private File file;
+
+    public FileAppender(Layout layout) {
         super(layout);
     }
 
-    protected FileAppender(Layout layout, ReportLevel reportLevel) {
+    public FileAppender(Layout layout, ReportLevel reportLevel) {
         super(layout, reportLevel);
     }
 
