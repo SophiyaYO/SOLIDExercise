@@ -5,11 +5,11 @@ import loggerLibrary.layouts.interfaces.Layout;
 
 public class ConsoleAppender extends AppenderImpl {
 
-    protected ConsoleAppender(Layout layout) {
+    public ConsoleAppender(Layout layout) {
         super(layout);
     }
 
-    protected ConsoleAppender(Layout layout, ReportLevel reportLevel) {
+    public ConsoleAppender(Layout layout, ReportLevel reportLevel) {
         super(layout, reportLevel);
     }
 
