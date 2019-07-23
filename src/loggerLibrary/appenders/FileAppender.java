@@ -26,7 +26,7 @@ public class FileAppender extends AppenderImpl {
         }
         String str = this.format(date, reportLevel, message);
 
-
+        this.file.
     }
 
 }
