@@ -25,7 +25,7 @@ public class Main {
  | Sample Output |
  | --- |                                                                     
   
-![sampleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/output0.png)
+![sampleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/pngs/output0.png)
 
 Logger logs data and time **\(String)** and a message **\(String)**.
 
@@ -106,7 +106,7 @@ public class Main {
 | Console Output |
 | --- |
 
-![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/consoleOutput.png)
+![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/pngs/consoleOutput.png)
 
 ### **Report Threshold**
 
@@ -137,7 +137,7 @@ public class Main {
 | Console Output |
 | --- |
 
-![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/consoleOutput2.png)
+![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/pngs/consoleOutput2.png)
 
 **_Only messages from error and above are appended._**
 
