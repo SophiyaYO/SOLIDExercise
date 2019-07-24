@@ -78,3 +78,28 @@ public class Main {
 }
 ```
 
+**_The above code should log the messages both on the console and in LogFile in the format SimpleLayout provides._**
+
+
+### **Extensibility**
+
+The end-user should be able to add his own layouts/appenders/loggers and use them. For example, he should be able to create his own XmlLayout and make the appenders use it, without directly editing the library source code. 
+
+| Sample Source Code |
+| --- |
+
+```java
+public class Main {
+    public static void main(String[] args) throws IOException {
+      Layout xmlLayout = new XmlLayout();
+      Appender consoleAppender = new ConsoleAppender(xmlLayout);
+      Logger logger = new MessageLogger(consoleAppender);
+      
+      logger.logFatal("3/31/2015 5:23:54 PM", "mscorlib.dll does not respond");
+      logger.logCritical("3/31/2015 5:23:54 PM", "No connection string found in App.config");        
+    }
+}
+```
+
+![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/consoleOutput.png)
+
