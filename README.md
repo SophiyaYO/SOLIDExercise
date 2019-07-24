@@ -1,6 +1,6 @@
 # **Exercises: SOLID**
 ---------------
-#### At the end you will find uml diagram of the hierarchy achieved
+_At the end you will find uml diagram of the hierarchy achieved_
 -----
 ## **Problem 1. Logger**
 ----------
