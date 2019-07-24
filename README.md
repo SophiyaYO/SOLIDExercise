@@ -1,5 +1,7 @@
 # **Exercises: SOLID**
 ---------------
+#### At the end you will find uml diagram of the hierarchy achieved
+-----
 ## **Problem 1. Logger**
 ----------
  Write a logging library for logging messages. The interface for the end-user should be as follows:
@@ -23,7 +25,7 @@ public class Main {
  | Sample Output |
  | --- |                                                                     
   
-![sampleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/output0.png)
+![sampleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/output0.png)
 
 Logger logs data and time **\(String)** and a message **\(String)**.
 
@@ -104,7 +106,7 @@ public class Main {
 | Console Output |
 | --- |
 
-![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/consoleOutput.png)
+![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/consoleOutput.png)
 
 ### **Report Threshold**
 
@@ -135,7 +137,7 @@ public class Main {
 | Console Output |
 | --- |
 
-![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/consoleOutput2.png)
+![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/pngs/consoleOutput2.png)
 
 **_Only messages from error and above are appended._**
 
@@ -196,4 +198,9 @@ Appender type:\ <appender type>, Layout type: \<layout type>, Report level: \<RE
 | Appender type: FileAppender, Layout type: XmlLayout, Report level: INFO, Messages appended: 5, File size: 37526 |
 
 
+------------------------
 
+# **Hierarchy UML**
+***********
+
+![uml](https://github.com/SophiyaYO/SOLIDExercise/blob/master/pngs/hierarchy.png)
