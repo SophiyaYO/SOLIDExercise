@@ -138,3 +138,62 @@ public class Main {
 ![ConsoleOutput](https://github.com/SophiyaYO/SOLIDExercise/blob/master/consoleOutput2.png)
 
 **_Only messages from error and above are appended._**
+
+### **Controller**
+
+Implement a **Controller** which reads all appenders that a **Logger** will have and input messages from the console. Every message should be evaluated by all the appenders and logged if they meet the report level. Console appenders should write directly on the console. File appenders write (save) the messages but do not print them.
+
+### **Input**
+
+On the first line you will get N - the number of appenders. On the next N lines, you will get information about the appenders in one of the formats below:
+-	**"\<appender type> \<layout type> \<REPORT LEVEL>"**
+-	**"\<appender type> \<layout type>"**
+
+If no report level is provided, the appender should be set to record all messages.
+If there is no report level, value is **INFO**.
+
+Next, **until** you get the **"END"** command you will receive messages containing report level, time and message separated by pipe "|":
+-	**"\<REPORT LEVEL>\|\<time>\|\<message>"**
+
+### **Output**
+
+Console appenders should print directly at the console in the layout they are provided:
+-	Simple layout example - **"3/31/2015 5:33:07 PM - ERROR - Error parsing request"**
+-	**Xml** layout example \(date, level and message tags are indented by 1 tabulation):
+
+    <log>
+        <date>3/31/2015 5:33:07 PM</date>
+        <level>ERROR</level>
+        <message>Error parsing request</message>
+    </log>
+
+
+After the **"END"** command you should **print Logger info** which includes statistics about every appender \(its type, layout, report level, messages appended and file size for file appenders):
+"Logger info
+Appender type:\ <appender type>, Layout type: \<layout type>, Report level: \<REPORT LEVEL>, Messages appended: \<count>, File size: \<size>"
+
+### **Example**
+
+| Input |
+| --- |
+| 2 |
+| ConsoleAppender SimpleLayout CRITICAL                                          |
+| FileAppender XmlLayout |
+| INFO|3/26/2015 2:08:11 PM|Everything seems fine |
+| WARNING|3/26/2015 2:22:13 PM|Warning: ping is too high - disconnect imminent |
+| ERROR|3/26/2015 2:32:44 PM|Error parsing request |
+| CRITICAL|3/26/2015 2:38:01 PM|No connection string found in App.config |
+| FATAL|3/26/2015 2:39:19 PM|mscorlib.dll does not respond |
+| END |
+||
+
+| Output |
+| --- |
+| 3/26/2015 2:38:01 PM - CRITICAL - No connection string found in App.config                                            | 
+| 3/26/2015 2:39:19 PM - FATAL - mscorlib.dll does not respond |
+| Logger info |
+| Appender type: ConsoleAppender, Layout type: SimpleLayout, Report level: CRITICAL, Messages appended: 2 |
+| Appender type: FileAppender, Layout type: XmlLayout, Report level: INFO, Messages appended: 5, File size: 37526 |
+
+
+
