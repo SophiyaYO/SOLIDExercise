@@ -48,17 +48,23 @@ the provided layout
 -	**LogFile** - a custom file class which logs messages in a string builder using a method **write\(\)**. It **should have a _getter_** for its **_size_** which **is the sum of the ascii codes of all alphabet characters** it contains \(e.g. a-z and A-Z).
 -	**Logger** - a logger class which is used to log messages. Calls each of its appenders when something needs to be logged.
 
-|Sample Source Code                                                              |
+|Sample Source Code |
 | --- |
-|Layout simpleLayout = new SimpleLayout\(); |
-|Appender consoleAppender = new ConsoleAppender\(simpleLayout); |
-| |
-|File file = new LogFile\(); |
-|Appender fileAppender = new FileAppender\(simpleLayout); |
-|\(\(FileAppender\) fileAppender\).setFile\(file); |
-| |
-|Logger logger = new MessageLogger(consoleAppender, fileAppender); |
-| |
-|logger.logError\("3/26/2015 2:08:11 PM", "Error parsing JSON."); |
-|logger.logInfo\("3/26/2015 2:08:11 PM", "User Pesho successfully registered."); |
+
+```java
+public class Main {
+    public static void main(String[] args) throws IOException {
+        Layout simpleLayout = new SimpleLayout();
+        Appender consoleAppender = new ConsoleAppender(simpleLayout);
+        
+        File file = new LogFile();
+        Appender fileAppender = new FileAppender(simpleLayout);
+        ((FileAppender) fileAppender).setFile(file);
+        
+        Logger logger = new MessageLogger(consoleAppender, fileAppender);
+        logger.logError("3/26/2015 2:08:11 PM", "Error parsing JSON.");
+        logger.logInfo("3/26/2015 2:08:11 PM", "User Pesho successfully registered.");
+    }
+}
+```
 
